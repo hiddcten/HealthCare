@@ -5,8 +5,6 @@ import {
     Button,
     CssBaseline,
     TextField,
-    FormControlLabel,
-    Checkbox,
     Grid,
     Typography,
     Container,
@@ -14,6 +12,7 @@ import {
     Alert,
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -24,6 +23,7 @@ const Register = () => {
         confirmPassword: '',
     });
     const [error, setError] = useState(null);
+    const navigate = useNavigate(); // Initialize navigate function
 
     useEffect(() => {
         // Lấy tham số query string "error"
@@ -44,13 +44,13 @@ const Register = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setError(null); 
-    
+        setError(null);
+
         if (formData.password !== formData.confirmPassword) {
             setError('Mật khẩu và xác nhận mật khẩu không khớp.');
             return;
         }
-        
+
         try {
             const formDataToSend = new FormData();
             formDataToSend.append('firstName', formData.firstName);
@@ -67,6 +67,8 @@ const Register = () => {
 
             if (result.includes('Đăng ký thành công!')) {
                 alert('Đăng ký thành công!');
+                console.log('Redirecting to login page...');
+                navigate('/login'); // Chuyển hướng đến trang Login
             } else {
                 setError(result);
             }
@@ -163,12 +165,6 @@ const Register = () => {
                                 <Alert severity="error">{error}</Alert>
                             </Grid>
                         )}
-                        <Grid item xs={12}>
-                            <FormControlLabel
-                                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                                label="Tôi muốn nhận thông tin, khuyến mãi và cập nhật qua email."
-                            />
-                        </Grid>
                     </Grid>
                     <Button
                         type="submit"

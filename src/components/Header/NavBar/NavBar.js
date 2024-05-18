@@ -1,6 +1,6 @@
 import { AppBar, Avatar, Box, Button, Container, Divider, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import HealingTwoToneIcon from '@mui/icons-material/HealingTwoTone';
 import './NavBar.css';
@@ -9,19 +9,23 @@ import { HashLink } from 'react-router-hash-link';
 const settings = ['Profile', 'Logout'];
 
 const Navbar = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
+    const location = useLocation();
+    const navigate = useNavigate();
+
     const user = { // Giả định user object
         displayName: 'John Doe',
         photoURL: 'https://example.com/photo.jpg',
         email: 'johndoe@example.com'
     };
 
-    const logout = () => {
-        console.log("User logged out");
-    };
-
-    const navigate = useNavigate();
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    useEffect(() => {
+        // Kiểm tra trạng thái đăng nhập từ sessionStorage
+        const isLoggedInSession = sessionStorage.getItem('isLoggedIn');
+        setIsLoggedIn(isLoggedInSession === 'true');
+    }, []);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -31,7 +35,7 @@ const Navbar = () => {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseNavMenu = (event) => {
+    const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
@@ -42,10 +46,12 @@ const Navbar = () => {
     const handleUserControl = (event) => {
         const userEvent = event.currentTarget.innerText;
         if (userEvent === 'Logout') {
-            logout();
+            // Xử lý logout
+            sessionStorage.removeItem('isLoggedIn'); // Xóa trạng thái đăng nhập từ sessionStorage
+            window.location.reload(); // Reload trang để cập nhật giao diện
         } else if (userEvent === 'Profile') {
-            console.log('ok');
-            navigate("/profile");
+            // Điều hướng tới trang profile
+            navigate('/profile');
         }
     };
 
@@ -54,6 +60,7 @@ const Navbar = () => {
             <AppBar position="fixed" color="primary" sx={{ top: 0, bottom: 'auto' }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
+                        {/* Phần header */}
                         <Typography
                             variant="h6"
                             noWrap
@@ -64,6 +71,7 @@ const Navbar = () => {
                             Health Haven Hospital
                         </Typography>
 
+                        {/* Menu điều hướng cho các màn hình nhỏ */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
                                 size="large"
@@ -93,15 +101,16 @@ const Navbar = () => {
                                     display: { xs: 'block', md: 'none' },
                                 }}
                             >
-                                <MenuItem component={HashLink} smooth to='/home#home'>home</MenuItem>
+                                <MenuItem component={HashLink} smooth to='/home#home'>Home</MenuItem>
                                 <MenuItem component={HashLink} smooth to='/services#services'>Services</MenuItem>
                                 <MenuItem component={HashLink} smooth to='/doctors#doctors'>Doctors</MenuItem>
                                 <MenuItem component={HashLink} smooth to='/appointment#appointment'>Appointment</MenuItem>
                                 <MenuItem component={HashLink} smooth to='/about#about'>About</MenuItem>
-                                {!user?.email && <MenuItem component={HashLink} smooth to='/login#login'>Login</MenuItem>}
+                                {!isLoggedIn && <MenuItem component={HashLink} smooth to='/login#login'>Login</MenuItem>}
                             </Menu>
                         </Box>
 
+                        {/* Logo trên màn hình nhỏ */}
                         <Typography
                             variant="h6"
                             align='center'
@@ -110,6 +119,8 @@ const Navbar = () => {
                         >
                             <HealingTwoToneIcon fontSize='large' /> Health Haven Hospital
                         </Typography>
+
+                        {/* Menu điều hướng cho các màn hình lớn */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             <HashLink className="text-style text-style-fullscrn" smooth to='/home#home'>
                                 <Button sx={{ my: 2, color: 'white', display: 'block' }}>Home</Button>
@@ -126,16 +137,17 @@ const Navbar = () => {
                             <HashLink className="text-style text-style-fullscrn" smooth to='/about#about'>
                                 <Button sx={{ my: 2, color: 'white', display: 'block' }}>About</Button>
                             </HashLink>
-                            {!user?.email && <HashLink className="text-style text-style-fullscrn" smooth to='/login#login'>
+                            {!isLoggedIn && <HashLink className="text-style text-style-fullscrn" smooth to='/login#login'>
                                 <Button sx={{ my: 2, color: 'white', display: 'block' }}>Login</Button>
                             </HashLink>}
                         </Box>
 
-                        {user?.email && (
+                        {/* Menu người dùng */}
+                        {isLoggedIn && (
                             <Box sx={{ flexGrow: 0 }}>
                                 <Tooltip title="Open settings">
                                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                        <Avatar alt="User Avatar" src={user?.email ? user.photoURL : "/static/images/avatar/2.jpg"} />
+                                        <Avatar alt="User Avatar" src={user.photoURL || "/static/images/avatar/2.jpg"} />
                                     </IconButton>
                                 </Tooltip>
                                 <Menu
@@ -172,3 +184,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

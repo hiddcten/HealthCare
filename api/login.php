@@ -7,9 +7,10 @@ $username = "root";
 $password = "";
 $dbname = "healthsystem";
 
-header("Access-Control-Allow-Origin: http://localhost:3000"); // Cho phép yêu cầu từ React app
-header("Access-Control-Allow-Methods: POST"); // Cho phép phương thức POST
-header("Access-Control-Allow-Headers: Content-Type"); // Cho phép header Content-Type
+// Thêm các header CORS
+header("Access-Control-Allow-Origin: http://localhost:3000");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS"); 
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -43,9 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Đăng nhập thành công
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $row['username'];
-                
+
                 // Trả về thông báo thành công
-                header("Content-Type: text/plain"); // Thêm header này
                 echo "success";
                 exit();
             } else {
