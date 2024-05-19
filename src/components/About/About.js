@@ -12,23 +12,14 @@ const About = () => {
         <Grid container direction="column" alignItems="center">
           <Grid item xs={12}>
             <Typography variant="h4" color="primary.main" gutterBottom align="center">
-              All-in-One Website Health Solution
+              Đặt dịch vụ nhanh cho nóng
             </Typography>
             <Typography variant="h6" gutterBottom align="center">
-              10 Years Of Experience in Medical Services
+              10 Năm phát triển bệnh viện
             </Typography>
-            <Typography variant="body1" paragraph align="justify">
-              One big thing I wanted to highlight is that our methodology is fairer to hospitals and health systems than horizontal sites. CareDash has many hospital reviews from real users, but the way we survey our patient users has less “motivated complainer bias.” Thus, I think the CareDash hospital reviews provider a more accurate view of real patient satisfaction.
+            <Typography variant="body1" paragraph align="center">
+              Mại zô anh em 
             </Typography>
-            <Typography variant="body1" paragraph align="justify">
-              We think something between 8 to 9 out of 10 patients walks out of the hospital satisfied, but typical web reviews make hospitals look much worse. This negative bias in hospital reviews is a big deal because people are walking into their care journey with a negative mindset about the care they are going to get, and that’s not good. The scale is just off because of the motivated complainers.
-            </Typography>
-            <Typography variant="body1" paragraph align="justify">
-              Be sure to leave a review on <strong>Health Haven</strong> of any hospital you’ve visited, whether you’ve had a negative or a positive experience. Share your suggestions about writing hospital reviews in the comments below or message us on facebook 
-            </Typography>
-            <a href="https://www.facebook.com/iamfoysal.h" target="_blank" rel="noopener noreferrer" className="about-link" style={{ display: 'block', textAlign: 'center' }}>
-              @Foysal
-            </a>
           </Grid>
           <Grid container item xs={12} justifyContent="center" spacing={3}>
             <Grid item xs={8} sm={6}>

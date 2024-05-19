@@ -18,7 +18,6 @@ import EmailIcon from '@mui/icons-material/Email';
 import HealingTwoToneIcon from '@mui/icons-material/HealingTwoTone';
 import CallIcon from '@mui/icons-material/Call';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 
@@ -53,7 +52,7 @@ const Footer = () => {
                                     alignItems="center"
                                     sx={{ mr: 2, display: { xs: 'flex', md: 'flex' }, color: 'white' }}
                                 >
-                                    <Avatar sx={{ mt: 1, mb: 1, mr: 1, bgcolor: 'white' }}>
+                                    <Avatar sx={{ mt: 1, mb: 1, mr: 1, bgcolor: '#8FBCDA' }}>
                                         <HealingTwoToneIcon color='primary' fontSize='large' />
                                     </Avatar>
                                     Health Haven Hospital
@@ -62,14 +61,14 @@ const Footer = () => {
                             </Box>
 
                             <Stack direction="row" justifyContent="flex-start" alignItems="center" spacing={1}>
-                                <Avatar sx={{ mt: 1, bgcolor: pink[500] }}>
+                                <Avatar sx={{ mt: 1, bgcolor: '#8FBCDA' }}>
                                     <LocationOnIcon />
                                 </Avatar>
                                 <span style={{ color: 'white' }}>Tejgaon I/A, Dhaka-1208</span>
                             </Stack>
 
                             <Stack direction="row" justifyContent="flex-start" alignItems="center" spacing={1}>
-                                <Avatar sx={{ mb: 1, mt: 1, bgcolor: pink[500] }}>
+                                <Avatar sx={{ mb: 1, mt: 1, bgcolor: '#8FBCDA' }}>
                                     <EmailIcon />
                                 </Avatar>
                                 <a className='text-style' href="mailto:mh.foysal.h@gmail.com" style={{ color: 'white' }}>
@@ -78,7 +77,7 @@ const Footer = () => {
                             </Stack>
 
                             <Stack direction="row" justifyContent="flex-start" alignItems="center" spacing={1}>
-                                <Avatar sx={{ mb: 1, bgcolor: pink[500] }}>
+                                <Avatar sx={{ mb: 1, bgcolor: '#8FBCDA' }}>
                                     <CallIcon />
                                 </Avatar>
                                 <a className='text-style' href="tel:01680xxx86" style={{ color: 'white' }}>
@@ -91,51 +90,50 @@ const Footer = () => {
                         <Grid item xs={12} sm={4}>
                             <Root>
                                 <Divider>
-                                    <Chip label="Our Services" />
+                                <Chip label={<Typography color="white">Our Services</Typography>} />
                                 </Divider>
                             </Root>
 
-                            <Box sx={{ p: 2 }}><HashLink className='text-style' to='/doctors#doctors' color='inherit' style={{ color: 'white' }}>Find a Doctor</HashLink></Box>
+                            <Box sx={{ p: 2 }}>
+                                <HashLink className='text-style' to='/doctors#doctors' color='inherit' style={{ color: 'white' }}>Find a Doctor</HashLink>
+                            </Box>
 
-                            <Box sx={{ p: 2 }}><HashLink className='text-style' to='/services#services' color='inherit' style={{ color: 'white' }}>All services</HashLink></Box>
+                            <Box sx={{ p: 2 }}>
+                                <HashLink className='text-style' to='/services#services' color='inherit' style={{ color: 'white' }}>All services</HashLink>
+                            </Box>
 
-                            <Box sx={{ p: 2 }}><HashLink className='text-style' to='/appointment#appointment' color='inherit' style={{ color: 'white' }}>Make An Appointment</HashLink></Box>
+                            <Box sx={{ p: 2 }}>
+                                <HashLink className='text-style' to='/appointment#appointment' color='inherit' style={{ color: 'white' }}>Make An Appointment</HashLink>
+                            </Box>
 
-                            <Box sx={{ p: 2 }}><HashLink className='text-style' to='/register' color='inherit' style={{ color: 'white' }}>Register For Service </HashLink></Box>
+                            <Box sx={{ p: 2 }}>
+                                <HashLink className='text-style' to='/register' color='inherit' style={{ color: 'white' }}>Register For Service </HashLink>
+                            </Box>
                         </Grid>
-
+                    
                         {/* ----------social media part ------------*/}
                         <Grid item xs={12} sm={4}>
                             <Root>
                                 <Divider>
-                                    <Chip label="Find us on social media" />
+                                <Chip label={<Typography color="white">Find us on media</Typography>} />
                                 </Divider>
                             </Root>
 
                             <Stack direction="row" justifyContent="flex-start" alignItems="center" spacing={1}>
-                                <Avatar sx={{ mb: 1, mt: 1, bgcolor: pink[500] }}>
+                                <Avatar sx={{ mb: 1, mt: 1, bgcolor: '#8FBCDA' }}>
                                     <FacebookIcon />
                                 </Avatar>
-                                <a className='text-style' href="https://www.facebook.com/iamfoysal.h" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
-                                    Foysal on Facebook
+                                <a className='text-style' href="https://www.facebook.com/tonducthanguniversity" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
+                                    Harvard Tan Phong on Facebook
                                 </a>
                             </Stack>
 
                             <Stack direction="row" justifyContent="flex-start" alignItems="center" spacing={1}>
-                                <Avatar sx={{ mb: 1, bgcolor: pink[500] }}>
-                                    <LinkedInIcon />
-                                </Avatar>
-                                <a className='text-style' href="https://www.linkedin.com/in/md-foysal-h/" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
-                                    Foysal on LinkedIn
-                                </a>
-                            </Stack>
-
-                            <Stack direction="row" justifyContent="flex-start" alignItems="center" spacing={1}>
-                                <Avatar sx={{ mb: 1, bgcolor: pink[500] }}>
+                                <Avatar sx={{ mb: 1, bgcolor: '#8FBCDA' }}>
                                     <GitHubIcon />
                                 </Avatar>
-                                <a className='text-style' href="https://github.com/Foy5al" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
-                                    Foysal on GitHub
+                                <a className='text-style' href="https://github.com/hiddcten/HealthCare" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>
+                                    Our Github Project 
                                 </a>
                             </Stack>
                         </Grid>

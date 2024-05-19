@@ -16,9 +16,9 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const user = { // Giả định user object
-        displayName: 'John Doe',
-        photoURL: 'https://example.com/photo.jpg',
-        email: 'johndoe@example.com'
+        displayName: '',
+        photoURL: '',
+        email: 'test@1231.com'
     };
 
     useEffect(() => {
@@ -171,7 +171,7 @@ const Navbar = () => {
                                     open={Boolean(anchorElUser)}
                                     onClose={handleCloseUserMenu}
                                 >
-                                    <Typography sx={{ p: '5px' }} color="primary" textAlign="center">Hi, {user.displayName}</Typography>
+                                    <Typography sx={{ p: '5px' }} color="primary" textAlign="center">Eat apple every day! {user.displayName}</Typography>
                                     <Divider />
                                     {settings.map((setting) => (
                                         <MenuItem key={setting} onClick={handleCloseUserMenu}>

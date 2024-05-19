@@ -40,9 +40,9 @@ const OurExperts = () => {
           {error}
         </Typography>
       ) : (
-        <Box sx={{ bgcolor: '#fce4ec', color: 'primary.main', p: 2, mb: 2, mt: 6, textAlign: "center" }}>
+        <Box sx={{ bgcolor: '#D3E9F5', color: 'primary.main', p: 2, mb: 2, mt: 6, textAlign: "center" }}>
           <Container maxWidth="xl">
-            <Typography sx={{ mt: 2, mb: 2, fontWeight: 600 }} variant="h5">
+            <Typography sx={{ mt: 2, mb: 2, fontWeight: 600 ,color: '#0077B2', fontSize: '2rem'}} variant="h5">
               Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ bạn
             </Typography>
 
@@ -55,7 +55,7 @@ const OurExperts = () => {
                     maxWidth: 345,
                     transition: '0.5s all ease-in-out',
                     ':hover': {
-                      color: '#e91e63',
+                      color: '#076EA2',
                       boxShadow: 1,
                     },
                     'img': { transition: '0.5s all ease-in-out' },
@@ -82,7 +82,7 @@ const OurExperts = () => {
                       <Button
                         component={Link}
                         to={`/appointment?doctorId=${doctor.doc_id}`}
-                        sx={{ mt: 2, mb: 1 }}
+                        sx={{ mt: 2, mb: 1, bgcolor: '#0077B2' }} // Thay đổi màu nền thành màu xanh dương #0077B2
                         variant="contained"
                         className="CheckButton"
                       >
