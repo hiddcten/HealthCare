@@ -1,58 +1,36 @@
-.animation {
-    -webkit-animation: animation 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both ease-in-out;
-    animation: animation 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Khoảng cách giữa các mục */
 }
 
-.animation:hover {
-    -webkit-animation: slide_bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    ;
-    animation: slide_bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.service-item {
+    width: calc(33.33% - 20px); /* Độ rộng của mỗi mục, trừ khoảng cách giữa chúng */
+    overflow: hidden; /* Ẩn phần vượt quá khung */
+    position: relative; /* Thiết lập vị trí tương đối */
 }
 
-@-webkit-keyframes animation {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    100% {
-        -webkit-transform: translateY(-40px);
-        transform: translateY(-40px);
-    }
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Thêm hiệu ứng chuyển động */
 }
 
-@keyframes animation {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    100% {
-        -webkit-transform: translateY(-40px);
-        transform: translateY(-40px);
-    }
+.service-item:hover img {
+    transform: translateY(-40px); /* Di chuyển ảnh lên trên khi rê chuột */
 }
 
-@-webkit-keyframes slide_bottom {
-    0% {
-        -webkit-transform: translateY(-40px);
-        transform: translateY(-40px);
-    }
-
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
+.service-item .service-info {
+    position: absolute; /* Thiết lập vị trí tuyệt đối */
+    bottom: 0; /* Đặt phần thông tin ở phía dưới */
+    left: 0; /* Đặt phần thông tin ở phía trái */
+    width: 100%; /* Độ rộng là 100% của phần cha */
+    background-color: rgba(255, 255, 255, 0.8); /* Màu nền cho phần thông tin */
+    padding: 10px; /* Khoảng cách nội dung và mép */
+    transform: translateY(100%); /* Di chuyển phần thông tin xuống dưới */
+    transition: transform 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940); /* Thêm hiệu ứng chuyển động */
 }
 
-@keyframes slide_bottom {
-    0% {
-        -webkit-transform: translateY(-50px);
-        transform: translateY(-50px);
-    }
-
-    100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
+.service-item:hover .service-info {
+    transform: translateY(0); /* Di chuyển phần thông tin lên trên khi rê chuột */
 }

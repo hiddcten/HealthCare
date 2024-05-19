@@ -15,6 +15,7 @@ import Services from './components/Services/Services';
 import Doctors from './components/Services/Doctors/Doctors';
 import Appointment from './components/Services/Appointment/Appointment';
 import ServiceDetails from './components/Services/ServiceDetails/ServiceDetails';
+import Profile from './components/Login/Login/UserProfile/UserProfile';
 
 // Custom theme
 const theme = createTheme({
@@ -56,6 +57,8 @@ function App() {
           <Route path="/services/details/:servId" element={<ServiceDetails />} />
           <Route path="/login" element={<Login />} /> 
           <Route path="/register" element={<Register />} /> 
+          <Route path="/profile" element={<Profile />} />
+          
           <Route path="*" element={<Notfound />} /> 
         </Routes>
         <Footer />

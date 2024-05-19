@@ -5,16 +5,20 @@
 
 .text-style:hover {
     text-decoration: none;
-    color: #1cef46;
+    color: #456da4;
 }
 
 .text-style-fullscrn {
-    background-color: #1cef46;
+    background-color: #2196F3;
 }
 
 .text-style-fullscrn:hover {
-    background-color: rgb(3, 121, 15);
+    background-color: #1b7bc9;
 }
 .flex-row-reverse {
     flex-direction: row-reverse;
   }
+
+  .MuiAppBar-root {
+  background-color: #2196F3 !important; /* Màu xanh dương Material UI */
+}
