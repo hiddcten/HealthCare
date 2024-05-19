@@ -1,0 +1,36 @@
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.service-item {
+    width: calc(33.33% - 20px); 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.service-item:hover img {
+    transform: translateY(-40px); 
+}
+
+.service-item .service-info {
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    transform: translateY(100%); 
+    transition: transform 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.service-item:hover .service-info {
+    transform: translateY(0); 
+}

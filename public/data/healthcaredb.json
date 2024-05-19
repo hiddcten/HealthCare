@@ -1,0 +1,49 @@
+{
+	"services": [
+		{
+			"id": 1,
+			"class": "",
+			"treatment": "Cardiology Department",
+			"price": 15000,
+			"description": "Specializes in the diagnosis and treatment of all heart conditions, from common issues like hypertension and arrhythmias to complex diseases such as heart failure and valvular heart disease.",
+			"icon": "https://i.ibb.co/DpVdYqQ/heart-2.png",
+			"service_img": "https://th.bing.com/th/id/OIP.M4kfYoM9-NhCbKrqEvDQhgAAAA?rs=1&pid=ImgDetMain"
+		},
+		{
+			"id": 2,
+			"class": "animation",
+			"treatment": "Psychology Department",
+			"price": 25000,
+			"description": "Offers comprehensive assessment, counseling, and treatment for a wide range of mental health conditions, including anxiety, depression, and post-traumatic stress disorder.",
+			"icon": "https://i.ibb.co/nzHc2t7/brain-2.png",
+			"service_img": "https://th.bing.com/th/id/OIP.2mmgcde7eCDCWn8Ko1X-VQAAAA?rs=1&pid=ImgDetMain"
+		},
+		{
+			"id": 3,
+			"class": "",
+			"treatment": "Anesthesia Department",
+			"price": 3000,
+			"description": "Provides safe and effective anesthesia and pain management for patients undergoing surgery and other medical procedures.",
+			"icon": "https://i.ibb.co/Ks1jsVf/stomach-2.png",
+			"service_img": "https://th.bing.com/th/id/OIP.RhfAWfVvK1xBK7qCdXWQCQAAAA?rs=1&pid=ImgDetMain"
+		},
+		{
+			"id": 4,
+			"class": "",
+			"treatment": "Respiratory Department",
+			"price": 100,
+			"description": "Specializes in the diagnosis and treatment of respiratory diseases such as asthma, pneumonia, and chronic obstructive pulmonary disease (COPD).",
+			"icon": "https://i.ibb.co/NWKjgmj/virus-2.png",
+			"service_img": "https://th.bing.com/th/id/OIP.ufiVyStHfL0GHNQ6pOAw5gAAAA?rs=1&pid=ImgDetMain"
+		},
+		{
+			"id": 5,
+			"class": "animation",
+			"treatment": "Infection Control Department",
+			"price": 9000,
+			"description": "Implements infection prevention and control measures throughout the hospital to ensure the safety of patients and healthcare workers.",
+			"icon": "https://i.ibb.co/w0Mh2Jf/lungs.png",
+			"service_img": "https://th.bing.com/th/id/OIP.8Xj9geTIeT2z0yDcp3z4lQAAAA?rs=1&pid=ImgDetMain"
+		}
+	]
+}

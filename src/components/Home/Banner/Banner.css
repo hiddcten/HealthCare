@@ -1,0 +1,25 @@
+.banner-container {
+    background-color: white;
+    padding: 20px 0; 
+  }
+  
+  .banner-text {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: auto;
+  }
+  
+
+  @media (max-width: 960px) {
+    .banner-container {
+      flex-direction: column; 
+    }
+    .banner-text {
+      margin-bottom: 20px; 
+    }
+  }
+  
